@@ -1,0 +1,28 @@
+{
+	"variants": {
+		"layers=1": {
+			"model": "drogenmissbrauch:block/chimera_slew_height2"
+		},
+		"layers=2": {
+			"model": "drogenmissbrauch:block/chimera_slew_height4"
+		},
+		"layers=3": {
+			"model": "drogenmissbrauch:block/chimera_slew_height6"
+		},
+		"layers=4": {
+			"model": "drogenmissbrauch:block/chimera_slew_height8"
+		},
+		"layers=5": {
+			"model": "drogenmissbrauch:block/chimera_slew_height10"
+		},
+		"layers=6": {
+			"model": "drogenmissbrauch:block/chimera_slew_height12"
+		},
+		"layers=7": {
+			"model": "drogenmissbrauch:block/chimera_slew_height14"
+		},
+		"layers=8": {
+			"model": "drogenmissbrauch:block/chimera_slew_block"
+		}
+	}
+}

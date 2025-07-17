@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:sugar"
+    },
+    "%": {
+      "item": "minecraft:cake"
+    }
+  },
+  "pattern": [
+    "###",
+    "#%#",
+    "###"
+  ],
+  "result": {
+    "item": "drogenmissbrauch:frosted_froth"
+  },
+  "show_notification": true
+}

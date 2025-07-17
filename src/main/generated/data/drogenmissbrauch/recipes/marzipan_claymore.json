@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "minecraft:sugar"
+    },
+    "|": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "###",
+    " # ",
+    " | "
+  ],
+  "result": {
+    "item": "drogenmissbrauch:marzipan_claymore"
+  },
+  "show_notification": true
+}

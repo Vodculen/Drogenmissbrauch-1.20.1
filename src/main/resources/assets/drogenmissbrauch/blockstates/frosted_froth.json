@@ -1,0 +1,25 @@
+{
+	"variants": {
+		"bites=0": {
+			"model": "drogenmissbrauch:block/frosted_froth"
+		},
+		"bites=1": {
+			"model": "drogenmissbrauch:block/frosted_froth_slice1"
+		},
+		"bites=2": {
+			"model": "drogenmissbrauch:block/frosted_froth_slice2"
+		},
+		"bites=3": {
+			"model": "drogenmissbrauch:block/frosted_froth_slice3"
+		},
+		"bites=4": {
+			"model": "drogenmissbrauch:block/frosted_froth_slice4"
+		},
+		"bites=5": {
+			"model": "drogenmissbrauch:block/frosted_froth_slice5"
+		},
+		"bites=6": {
+			"model": "drogenmissbrauch:block/frosted_froth_slice6"
+		}
+	}
+}
