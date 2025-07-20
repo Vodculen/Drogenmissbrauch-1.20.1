@@ -29,6 +29,10 @@ public class DrogenmissbrauchClient implements ClientModInitializer {
 			
 			return livingEntity.getActiveItem() != itemStack ? 0.0F : 1.0F;
 		});
+
+		ModelPredicateProviderRegistry.register(ModItems.MARZIPAN_AXEBLADE, new Identifier("chewed"), (itemStack, clientWorld, livingEntity, seed) -> {
+			return itemStack.getOrCreateNbt().getInt("TimesEaten") / 4.0F;
+		});
 	}
 
 	@Override

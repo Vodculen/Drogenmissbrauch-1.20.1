@@ -1,0 +1,33 @@
+{
+	"parent": "minecraft:item/handheld",
+	"textures": {
+		"layer0": "drogenmissbrauch:item/marzipan_axeblade"
+	},
+
+	"overrides": [
+		{
+			"predicate": {
+				"chewed": 0.25
+			},
+			"model": "drogenmissbrauch:item/marzipan_axeblade_bite1"
+		},
+		{
+			"predicate": {
+				"chewed": 0.5
+			},
+			"model": "drogenmissbrauch:item/marzipan_axeblade_bite2"
+		},
+		{
+			"predicate": {
+				"chewed": 0.75
+			},
+			"model": "drogenmissbrauch:item/marzipan_axeblade_bite3"
+		},
+		{
+			"predicate": {
+				"chewed": 1
+			},
+			"model": "drogenmissbrauch:item/marzipan_axeblade_bite4"
+		}
+	]
+}

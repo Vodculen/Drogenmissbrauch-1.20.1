@@ -18,6 +18,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Vanishable;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.UseAction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.vodculen.drogenmissbrauch.enchantment.ModEnchantmentHelper;
@@ -81,19 +82,19 @@ public class MarzipanClaymoreItem extends Item implements Vanishable {
 
 	@Override
 	public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
-		if (!world.isClient) {
+		if (!world.isClient && user instanceof PlayerEntity player) {
 			float reduction = 1.5F;
 			float addition = 0.1F;
 			int timesEaten = stack.getOrCreateNbt().getInt("TimesEaten");
-			int level = ModEnchantmentHelper.getSelfSacrifice(stack); // Get enchantment level
+			int level = ModEnchantmentHelper.getSelfSacrifice(stack);
 
 			if (level >= 1 && timesEaten == 4) {
-				// Reset all stats on 5th use if enchanted
 				stack.getOrCreateNbt().putInt("TimesEaten", 0);
 				stack.getOrCreateNbt().putDouble("DamageReduction", 0);
 				stack.getOrCreateNbt().putDouble("SpeedAddition", 0);
+
+				player.getHungerManager().setFoodLevel(player.getHungerManager().getFoodLevel() - 8);
 			} else if (timesEaten < 4) {
-				// Regular stat accumulation
 				double currentReduction = stack.getOrCreateNbt().getDouble("DamageReduction");
 				double newReduction = Math.min(currentReduction + reduction, attackDamage);
 				double currentAddition = stack.getOrCreateNbt().getDouble("SpeedAddition");
@@ -103,13 +104,15 @@ public class MarzipanClaymoreItem extends Item implements Vanishable {
 				stack.getOrCreateNbt().putDouble("DamageReduction", newReduction);
 				stack.getOrCreateNbt().putDouble("SpeedAddition", newAddition);
 
+				player.getHungerManager().setFoodLevel(player.getHungerManager().getFoodLevel() + 2);
+
 				user.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, Ticks.getMinutes(3), timesEaten, true, true));
 			}
 
 			stack.damage(3, user, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
 		}
 
-		return super.finishUsing(stack, world, user);
+		return stack; // DO NOT call super.finishUsing()
 	}
 
 	@Override
@@ -118,11 +121,7 @@ public class MarzipanClaymoreItem extends Item implements Vanishable {
 		int timesEaten = stack.getOrCreateNbt().getInt("TimesEaten");
 		int level = ModEnchantmentHelper.getSelfSacrifice(stack);
 
-		if (level >= 1) {
-			if (timesEaten >= 5) {
-				return TypedActionResult.fail(stack);
-			}
-		} else if (timesEaten >= 4) {
+		if ((level >= 1 && timesEaten >= 5) || (level < 1 && timesEaten >= 4)) {
 			return TypedActionResult.fail(stack);
 		}
 
@@ -147,5 +146,15 @@ public class MarzipanClaymoreItem extends Item implements Vanishable {
 	@Override
 	public int getEnchantability() {
 		return 1;
+	}
+
+	@Override
+	public UseAction getUseAction(ItemStack stack) {
+		return UseAction.EAT; // Shows eating animation
+	}
+
+	@Override
+	public int getMaxUseTime(ItemStack stack) {
+		return 32; // Eating duration
 	}
 }

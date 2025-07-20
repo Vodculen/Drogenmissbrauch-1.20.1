@@ -1,4 +1,7 @@
-// 1.20.1	2025-07-17T12:20:49.691725761	Drogenmissbrauch/Model Definitions
+// 1.20.1	2025-07-20T13:36:12.44734595	Drogenmissbrauch/Model Definitions
 070257b0f7d136428d55e202a01a883337724eb5 assets/drogenmissbrauch/models/item/incantationum.json
 a411f6c78c3b98e1afd5fd2e256554b884b8e301 assets/drogenmissbrauch/models/item/geschwind_rubble.json
+28c99978b2590ee5979df1a9177010713c96ed9f assets/drogenmissbrauch/models/block/sugar_block.json
+9f953114c2c8d0b7c6653d0aa49bdb2fbb176927 assets/drogenmissbrauch/blockstates/sugar_block.json
+c58d025b9d4f8d1afd85de464f477fbacebed1e3 assets/drogenmissbrauch/models/item/sugar_block.json
 f981c299c4810611c652dd26ca8e2cc173ced654 assets/drogenmissbrauch/models/item/levitare.json

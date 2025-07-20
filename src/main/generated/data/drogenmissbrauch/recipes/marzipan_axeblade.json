@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "drogenmissbrauch:sugar_block"
+    },
+    "%": {
+      "item": "minecraft:sugar"
+    },
+    "|": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "#%#",
+    " % ",
+    " | "
+  ],
+  "result": {
+    "item": "drogenmissbrauch:marzipan_axeblade"
+  },
+  "show_notification": true
+}

@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "drogenmissbrauch:marzipan_claymore"
+        "recipe": "minecraft:sugar_block"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "drogenmissbrauch:marzipan_claymore"
+      "minecraft:sugar_block"
     ]
   },
   "sends_telemetry_event": false

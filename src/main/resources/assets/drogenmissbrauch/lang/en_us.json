@@ -3,8 +3,13 @@
 	"item.drogenmissbrauch.levitare": "Levitare",
 	"item.drogenmissbrauch.incantationum": "Incantationum",
 	"item.drogenmissbrauch.geschwind_rubble": "Geschwind Rubble",
+	"item.drogenmissbrauch.marzipan_axeblade": "Marzipan Axeblade",
 
 	"block.drogenmissbrauch.chimera_slew": "Chimera Slew",
-	"block.drogenmissbrauch.frosted_froth": "Frosted Froth"
+	"block.drogenmissbrauch.frosted_froth": "Frosted Froth",
+	"block.drogenmissbrauch.sugar_block": "Sugar Block",
+
+	"enchantment.drogenmissbrauch.self_sacrifice": "Self Sacrifice",
+	"enchantment.drogenmissbrauch.bukkehorn": "Bukkehorn"
 
 }

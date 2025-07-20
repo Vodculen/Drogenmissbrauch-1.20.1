@@ -1,8 +1,12 @@
 package net.vodculen.drogenmissbrauch.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroups;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -20,14 +24,32 @@ public class ModItems {
 		new FoodComponent.Builder().hunger(4).saturationModifier(1.2F).alwaysEdible().build())));
 	public static final Item GESCHWIND_RUBBLE = registerItem("geschwind_rubble", new GeschwindRubble(new Item.Settings().food(
 		new FoodComponent.Builder().hunger(2).saturationModifier(1.2F).alwaysEdible().build())));
-	public static final Item MARZIPAN_CLAYMORE = registerItem("marzipan_claymore", new MarzipanClaymoreItem(new Item.Settings().maxDamage(256).food(new FoodComponent.Builder().alwaysEdible().build())));
+	public static final Item MARZIPAN_AXEBLADE = registerItem("marzipan_axeblade", new MarzipanClaymoreItem(new Item.Settings().maxDamage(256)));
 	
-
+	// Below are helper classes that make defining Items easier as well as making them accessible to the entry class
 	private static Item registerItem(String name, Item item) {
 		return Registry.register(Registries.ITEM, Identifier.of(Drogenmissbrauch.MOD_ID, name), item);
 	}
 
 	public static void registerModItems() {
 		Drogenmissbrauch.LOGGER.info("Registering Mod Items for " + Drogenmissbrauch.MOD_ID);
+
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(ModItems::foodItemGroup);
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(ModItems::combatItemGroup);
 	}
+
+
+	// Item Groups
+	private static void foodItemGroup(FabricItemGroupEntries entires) {
+		entires.addAfter(Items.GOLDEN_APPLE, ModItems.INCANTATIONUM);
+		entires.addAfter(Items.CHORUS_FRUIT, ModItems.LEVITARE);
+		entires.addAfter(Items.PUMPKIN_PIE, ModItems.GESCHWIND_RUBBLE);
+		entires.addAfter(ModItems.GESCHWIND_RUBBLE, ModItems.NEBULA);
+		entires.addAfter(ModItems.NEBULA, ModItems.MARZIPAN_AXEBLADE);
+	}
+
+	private static void combatItemGroup(FabricItemGroupEntries entires) {
+		entires.addAfter(Items.TRIDENT, ModItems.MARZIPAN_AXEBLADE);
+	}
+
 }

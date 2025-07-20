@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:item/handheld",
+	"textures": {
+		"layer0": "drogenmissbrauch:item/marzipan_axeblade_bite1"
+	}
+}

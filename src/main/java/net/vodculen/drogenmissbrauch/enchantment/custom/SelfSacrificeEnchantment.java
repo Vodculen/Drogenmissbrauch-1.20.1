@@ -23,7 +23,7 @@ public class SelfSacrificeEnchantment extends Enchantment {
 
 	@Override
 	public boolean isAcceptableItem(ItemStack stack) {
-		return stack.isOf(ModItems.MARZIPAN_CLAYMORE);
+		return stack.isOf(ModItems.MARZIPAN_AXEBLADE);
 	}
 
 	@Override

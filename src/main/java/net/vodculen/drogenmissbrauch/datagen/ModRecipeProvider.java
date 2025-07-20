@@ -19,6 +19,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
 	@Override
 	public void generate(Consumer<RecipeJsonProvider> exporter) {
+		offerReversibleCompactingRecipes(exporter, RecipeCategory.FOOD, Items.SUGAR, RecipeCategory.FOOD, ModBlocks.SUGAR_BLOCK);
+
 		ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.NEBULA)
 			.input(Items.AMETHYST_SHARD)
 			.input(Items.SUGAR)
@@ -42,17 +44,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 			;
 
 		ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.GESCHWIND_RUBBLE, 8)
-			.input(Items.BIRCH_LOG, 4)
-			.input(Items.SUGAR, 2)
-			.criterion(hasItem(Items.BIRCH_LOG), conditionsFromItem(Items.BIRCH_LOG))
-			.offerTo(exporter)
-			;
-
-		ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, ModBlocks.SUGAR_BLOCK)
-			.pattern("###")
-			.pattern("###")
-			.pattern("###")
-			.input('#', Items.SUGAR)
+			.input(Items.GRAVEL, 1)
+			.input(Items.YELLOW_DYE, 1)
+			.input(Items.SUGAR, 3)
 			.criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
 			.offerTo(exporter)
 			;
@@ -67,13 +61,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 			.offerTo(exporter)
 			;
 
-		ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.MARZIPAN_CLAYMORE)
-			.pattern("###")
-			.pattern(" # ")
+		ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, ModItems.MARZIPAN_AXEBLADE)
+			.pattern("#%#")
+			.pattern(" % ")
 			.pattern(" | ")
-			.input('#', Items.SUGAR)
+			.input('#', ModBlocks.SUGAR_BLOCK)
+			.input('%', Items.SUGAR)
 			.input('|', Items.STICK)
-			.criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
+			.criterion(hasItem(ModBlocks.SUGAR_BLOCK), conditionsFromItem(ModBlocks.SUGAR_BLOCK))
 			.offerTo(exporter)
 			;
 	}
