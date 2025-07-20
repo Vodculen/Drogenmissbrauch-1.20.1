@@ -10,6 +10,7 @@ import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.vodculen.drogenmissbrauch.Drogenmissbrauch;
 import net.vodculen.drogenmissbrauch.item.consumable.GeschwindRubble;
 import net.vodculen.drogenmissbrauch.item.consumable.Incantationum;
@@ -24,7 +25,7 @@ public class ModItems {
 		new FoodComponent.Builder().hunger(4).saturationModifier(1.2F).alwaysEdible().build())));
 	public static final Item GESCHWIND_RUBBLE = registerItem("geschwind_rubble", new GeschwindRubble(new Item.Settings().food(
 		new FoodComponent.Builder().hunger(2).saturationModifier(1.2F).alwaysEdible().build())));
-	public static final Item MARZIPAN_AXEBLADE = registerItem("marzipan_axeblade", new MarzipanClaymoreItem(new Item.Settings().maxDamage(256)));
+	public static final Item MARZIPAN_AXEBLADE = registerItem("marzipan_axeblade", new MarzipanClaymoreItem(new Item.Settings().maxDamage(256).rarity(Rarity.UNCOMMON)));
 	
 	// Below are helper classes that make defining Items easier as well as making them accessible to the entry class
 	private static Item registerItem(String name, Item item) {

@@ -43,7 +43,7 @@ public class ModBlocks {
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(ModBlocks::foodItemGroup);
 	}
 
-	
+
 	// Item Groups
 	private static void ingredientsItemGroup(FabricItemGroupEntries entires) {
 		entires.addAfter(Items.SUGAR, ModBlocks.SUGAR_BLOCK);
