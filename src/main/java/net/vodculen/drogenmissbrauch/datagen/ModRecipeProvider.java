@@ -33,7 +33,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 			.offerTo(exporter)
 			;
 
-		ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.INCANTATIONUM, 2)
+		ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.INCANTATIONUM, 4)
 			.input(Items.PUFFERFISH)
 			.input(Items.APPLE)
 			.input(Items.SUGAR, 4)
@@ -48,8 +48,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 			.offerTo(exporter)
 			;
 
-		ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModBlocks.CHIMERA_SLEW)
-			.input(Items.SUGAR, 4)
+		ShapedRecipeJsonBuilder.create(RecipeCategory.FOOD, ModBlocks.SUGAR_BLOCK)
+			.pattern("###")
+			.pattern("###")
+			.pattern("###")
+			.input('#', Items.SUGAR)
 			.criterion(hasItem(Items.SUGAR), conditionsFromItem(Items.SUGAR))
 			.offerTo(exporter)
 			;

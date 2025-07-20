@@ -3,7 +3,8 @@
 	"package": "net.vodculen.drogenmissbrauch.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"PlayerEntityMixin"
+		"PlayerEntityMixin",
+		"GoatHornMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

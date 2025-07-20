@@ -2,6 +2,7 @@ package net.vodculen.drogenmissbrauch;
 
 import net.fabricmc.api.ModInitializer;
 import net.vodculen.drogenmissbrauch.block.ModBlocks;
+import net.vodculen.drogenmissbrauch.enchantment.ModEnchantments;
 import net.vodculen.drogenmissbrauch.item.ModItems;
 
 import org.slf4j.Logger;
@@ -15,5 +16,6 @@ public class Drogenmissbrauch implements ModInitializer {
 	public void onInitialize() {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModEnchantments.registerModEnchantments();
 	}
 }

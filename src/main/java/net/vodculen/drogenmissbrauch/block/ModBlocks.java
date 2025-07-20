@@ -18,6 +18,7 @@ public class ModBlocks {
         return (Integer)state.get(ChimeraSlewBlock.LAYERS) >= 8;
     })));
 	public static final Block FROSTED_FROTH = registerBlock("frosted_froth", new FrostedFrothBlock(Settings.create()));
+	public static final Block SUGAR_BLOCK = registerBlock("sugar_block", new Block(Settings.create()));
 		
 
 	// Below are helper classes that make defining Blocks easier as well as making them accessible to the entry class
